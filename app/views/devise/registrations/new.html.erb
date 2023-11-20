@@ -1,6 +1,9 @@
+<div class="container">
+<div class="py-2 d-flex justify-items-center">
+  <div class="mt-2">
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -29,3 +32,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+  </div>
+</div>
+</div>
