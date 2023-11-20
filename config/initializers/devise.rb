@@ -304,6 +304,9 @@ Devise.setup do |config|
   # Note: These might become the new default in future versions of Devise.
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
+  config.mailer_sender = 'your_mail@example.com'
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
+
 
   # ==> Configuration for :registerable
 
