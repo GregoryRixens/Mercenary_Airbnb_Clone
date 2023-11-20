@@ -1,1 +1,4 @@
 <p>Hi it works</p>
+<% if @user %>
+<p>Hey you are<%= @user.last_name%></p>
+<% end %>
