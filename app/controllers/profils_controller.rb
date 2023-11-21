@@ -17,6 +17,12 @@ class ProfilsController < ApplicationController
     end
   end
 
+  def bookings_received
+    @profil = User.find(params[:id])
+    @offers = @profil.offers.includes(:reservations)
+    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id)
+  end
+
   private
 
   def profil_params
