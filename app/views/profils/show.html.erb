@@ -9,9 +9,28 @@
       <p> Email : <%= @profil.email %></p>
       <p> Username : <%= @profil.user_name %></p>
     </div>
-    <div class="card-footer">
+    <div class="card-footer d-flex justify-content-between">
       <%= link_to 'Edit', edit_profil_path(@profil) %>
-       <%= link_to 'Create a new offer', new_offer_path(@offer) %>
+      <%= link_to 'Create a new offer', new_offer_path(@offer) %>
     </div>
+  </div>
+  <div class="d-flex m-3">
+    <% @profil.offers.each do |offer| %>
+      <div class="card m-3">
+        <div class="card-header">
+          <div class="d-flex">
+              <h1><%= offer.title %></h1>
+          </div>
+        </div>
+        <div class="card-body">
+          <p> Price : <%= offer.price %></p>
+          <p> Description : <%= offer.description %></p>
+          <p> Address : <%= offer.address %></p>
+        </div>
+        <div class="card-footer">
+          <%= link_to 'Edit', edit_offer_path(offer) %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
