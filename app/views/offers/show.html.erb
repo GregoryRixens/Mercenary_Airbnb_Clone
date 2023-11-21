@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @offer.title %></h1>
+  <p>Created by: <%= @offer.user.user_name %></p>
   <p>Price: <%= @offer.price.to_s %></p>
   <p>Description: <%= @offer.description %></p>
   <p>Address: <%= @offer.address %></p>
