@@ -12,7 +12,7 @@ puts 'Creating 10 users and each user has an offer...'
   user.save!
   offer = Offer.new(
     title: Faker::Fantasy::Tolkien.poem,
-    description: Faker::Books::Lovecraft.paragraphs(number: 2),
+    description: Faker::Books::Lovecraft.paragraph(sentence_count: 10),
     # poster_url: Faker::LoremFlickr.image(search_terms: ['cat']),
     price: Faker::Number.between(from: 50, to: 200),
     address: Faker::Books::Dune.planet,
