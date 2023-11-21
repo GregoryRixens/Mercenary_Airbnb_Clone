@@ -1,7 +1,7 @@
 <%= simple_form_for(offer) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :description %>
+  <%= f.input :title, input_html: { maxlength: 255 }  %>
+  <%= f.input :address, input_html: { maxlength: 255 }  %>
+  <%= f.input :price, numericality: { greater_than_or_equal_to: 0 } %>
+  <%= f.input :description, input_html: { maxlength: 1000 } %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
