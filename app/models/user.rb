@@ -6,6 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :email, presence: true, format: { with: Devise.email_regexp }
   validates :password, presence: true, length: { minimum: 6 }, if: :password_required?
+  validates :user_name, presence: true, uniqueness: true, length: { maximum: 255 }
+  validates :last_name, presence: true, length: { maximum: 255 }
+  validates :first_name, presence: true, length: { maximum: 255 }
 
   private
 
