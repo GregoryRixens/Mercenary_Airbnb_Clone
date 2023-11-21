@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <div class="d-flex">
+          <h1><%= @profil.first_name %> <%= @profil.last_name %></h1>
+      </div>
+    </div>
+    <div class="card-body">
+      <p> Email : <%= @profil.email %></p>
+      <p> Username : <%= @profil.user_name %></p>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Edit', edit_profil_path(@profil) %>
+    </div>
+  </div>
+</div>
