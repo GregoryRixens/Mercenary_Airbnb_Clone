@@ -9,9 +9,13 @@ class ProfilsController < ApplicationController
 
   def update
     @profil = current_user
-    @profil.update(profil_params)
+    if @profil.update(profil_params)
     redirect_to profil_path(@profil)
+    else
+      redirect_to edit_profil_path(@profil)
+      render :edit
   end
+end
 
   private
 
