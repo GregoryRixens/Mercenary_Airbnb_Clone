@@ -23,6 +23,18 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @offer = @reservation.offer
+    @reservation.destroy
+
+    if request.referer == offer_url(@offer)
+      redirect_to offers_path
+    else
+      redirect_to request.referer
+    end
+  end
+
   private
 
   def offer_id

@@ -6,8 +6,12 @@
       <div class="p-3">
         <div class="row">
           <div class="col-6 text-center">
-            <div>
-              <%= image_tag 'IMG_2498.PNG', class: "img-profil shadow" %>
+            <div class="img-profil shadow">
+              <% if @profil.photo.attached? == true  %>
+                <%= cl_image_tag @profil.photo.key, class: "img-profil shadow" %>
+              <% else %>
+                <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
+              <% end %>
             </div>
             <hr>
             <div>
@@ -62,6 +66,7 @@
             <% end %>
           </div>
           <%= link_to 'Create a new offer', new_offer_path(@offer), class: 'btn btn-success' %>
+          <%= link_to "Bookings Received", bookings_received_profil_path(@profil), class: "btn btn-primary" %>
         </div>
     </div>
   </div>
