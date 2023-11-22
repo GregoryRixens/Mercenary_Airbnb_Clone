@@ -8,12 +8,19 @@
       </div>
     </div>
     <div class="card-body">
+      <% if @profil.photo.attached? == true  %>
+      <%= cl_image_tag @profil.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+      <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
+      <% end %>
       <p>Email: <%= @profil.email %></p>
       <p>Username: <%= @profil.user_name %></p>
     </div>
     <div class="card-footer d-flex justify-content-between">
       <%= link_to 'Edit', edit_profil_path(@profil), class: 'btn btn-primary' %>
       <%= link_to 'Create a new offer', new_offer_path(@offer), class: 'btn btn-success' %>
+      <%= link_to "Bookings Received", bookings_received_profil_path(@profil), class: "btn btn-primary" %>
+
     </div>
   </div>
 
@@ -35,6 +42,8 @@
         </div>
         <div class="card-footer">
           <%= link_to 'Edit', edit_offer_path(offer), class: 'btn btn-warning' %>
+          <%= link_to 'Delete', offer_path(offer),class: 'btn btn-warning', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+
         </div>
       </div>
     <% end %>
@@ -57,7 +66,8 @@
           <p>Duration: <%= reservation.start_date %> to <%= reservation.end_date %></p>
         </div>
         <div class="card-footer">
-          <%= link_to 'Edit', edit_reservation_path(reservation), class: 'btn btn-info' %>
+          <%= link_to 'Cancel', reservation_path(reservation),class: 'btn btn-warning', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>
+
         </div>
       </div>
     <% end %>

@@ -37,11 +37,13 @@ class OffersController < ApplicationController
   end
 
   def destroy
+    @offer.reservations.destroy_all
     @offer.destroy
+
     if request.referer == offer_url(@offer)
-      redirect_to offers_path
+      redirect_to offers_path, notice: 'Offer was successfully destroyed.'
     else
-      redirect_to request.referer
+      redirect_to request.referer, notice: 'Offer was successfully destroyed.'
     end
   end
 
@@ -52,6 +54,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :price, :description, :address, :image)
+    params.require(:offer).permit(:title, :price, :description, :address, :photo)
   end
 end
