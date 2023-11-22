@@ -1,0 +1,8 @@
+<%= form_with(model: offer, local: true) do |form| %>
+  <!-- Other fields -->
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <%= form.submit %>
+<% end %>

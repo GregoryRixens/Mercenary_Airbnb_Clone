@@ -5,24 +5,53 @@
   <div class="row">
     <% @offers.each do |offer| %>
       <div class="col-md-4 mb-3">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offers Dashboard</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <header class="header">
+    <%= image_tag("logo_merc.png", alt: "Logo_merc", class: "logo") %>
+    <div class="search-bar-container">
+      <input type="text" class="search-bar" placeholder="Recherche/filtres" />
+    </div>
+    <div class="header-buttons">
+      <div class="button-container">
+        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+      </div>
+      <div class="button-container">
+        <%= link_to "My profil", profil_path(current_user), class: "dropdown-item" %>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Latest Offers</h2>
+    <div class="cards-container">
+      <% @offers.each do |offer| %>
         <div class="card">
+          <div class="card-image">
+            <% if offer.photo.attached? == true  %>
+              <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
+            <% end %>
+          </div>
           <div class="card-body">
             <h5 class="card-title"><%= offer.title %></h5>
-            <% if offer.photo.attached? == true  %>
-            <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
-            <% else %>
-            <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
-            <% end %>
-            <p class="card-text"><%= offer.description %></p>
-            <p class="card-text">Price: <%= number_to_currency(offer.price) %></p>
-            <p class="card-text">Address: <%= offer.address %></p>
-            <!-- Add more details as needed -->
-
-            <!-- You can also add a link to view the offer details if required -->
-            <%= link_to "View Details", offer_path(offer), class: "btn btn-primary" %>
+            <div class="card-description">
+              <p>Price: <%= number_to_currency(offer.price) %></p>
+              <p>Address: <%= offer.address %></p>
+              <%= link_to "View Details", offer_path(offer), class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+      <% end %>
+    </div>
+  </main>
+</body>
+</html>
