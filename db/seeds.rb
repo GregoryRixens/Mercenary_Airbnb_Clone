@@ -8,7 +8,7 @@ compteur = 0
 10.times do
   image_url = array_url[compteur]
   user = User.new(
-    user_name: Faker::Books::TheKingkillerChronicle.character,
+    user_name: Faker::FunnyName.two_word_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 8),
     last_name: Faker::Games::ElderScrolls.last_name,
