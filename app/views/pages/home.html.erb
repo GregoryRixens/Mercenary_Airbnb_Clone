@@ -1,35 +1,6 @@
+<%= render "pages/header" %>
 
-<div class="container m-5">
-  <h2>Latest Offers</h2>
-
-  <div class="row">
-    <% @offers.each do |offer| %>
-      <div class="col-md-4 mb-3">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offers Dashboard</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
-  <header class="header">
-    <%= image_tag("logo_merc.png", alt: "Logo_merc", class: "logo") %>
-    <div class="search-bar-container">
-      <input type="text" class="search-bar" placeholder="Recherche/filtres" />
-    </div>
-    <div class="header-buttons">
-      <div class="button-container">
-        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-      </div>
-      <div class="button-container">
-        <%= link_to "My profil", profil_path(current_user), class: "dropdown-item" %>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
+  <div class="container">
     <h2>Latest Offers</h2>
     <div class="cards-container">
       <% @offers.each do |offer| %>
@@ -52,6 +23,4 @@
         </div>
       <% end %>
     </div>
-  </main>
-</body>
-</html>
+</div>

@@ -67,16 +67,5 @@
           </div>
           <%= link_to 'Create a new offer', new_offer_path(@offer), class: 'btn btn-success' %>
         </div>
-        <div class="card-body">
-          <p>Price: <%= reservation.offer.price.to_s %>$</p>
-          <p>Address: <%= reservation.offer.address %></p>
-          <p>Duration: <%= reservation.start_date %> to <%= reservation.end_date %></p>
-        </div>
-        <div class="card-footer">
-          <%= link_to 'Cancel', reservation_path(reservation),class: 'btn btn-warning', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>
-
-        </div>
       </div>
-    <% end %>
-
   </div>
