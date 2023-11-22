@@ -1,0 +1,27 @@
+<div class="btn-group dropstart home-btn">
+  <a data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="40,0">
+    <%= image_tag 'icons/home.svg' %>
+  </a>
+  <ul class="dropdown-menu text-center menu">
+    <!-- Dropdown menu links -->
+    <% if user_signed_in? %>
+      <li>
+        <strong><%= current_user.user_name %></strong>
+      </li>
+      <hr>
+      <li>
+        <%= link_to "Home", root_path, class: "dropdown-item" %>
+      </li>
+      <li>
+        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+      </li>
+      <li>
+        <%= link_to "My profil", profil_path(current_user), class: "dropdown-item" %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
