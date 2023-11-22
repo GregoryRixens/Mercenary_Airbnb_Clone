@@ -1,28 +1,26 @@
+<%= render "pages/header" %>
 
-<div class="container">
-  <h2>Latest Offers</h2>
-
-  <div class="row">
-    <% @offers.each do |offer| %>
-      <div class="col-md-4 mb-3">
+  <div class="container">
+    <h2>Latest Offers</h2>
+    <div class="cards-container">
+      <% @offers.each do |offer| %>
         <div class="card">
+          <div class="card-image">
+            <% if offer.photo.attached? == true  %>
+              <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
+            <% end %>
+          </div>
           <div class="card-body">
             <h5 class="card-title"><%= offer.title %></h5>
-            <% if offer.photo.attached? == true  %>
-            <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
-            <% else %>
-            <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
-            <% end %>
-            <p class="card-text"><%= offer.description %></p>
-            <p class="card-text">Price: <%= number_to_currency(offer.price) %></p>
-            <p class="card-text">Address: <%= offer.address %></p>
-            <!-- Add more details as needed -->
-
-            <!-- You can also add a link to view the offer details if required -->
-            <%= link_to "View Details", offer_path(offer), class: "btn btn-primary" %>
+            <div class="card-description">
+              <p>Price: <%= number_to_currency(offer.price) %></p>
+              <p>Address: <%= offer.address %></p>
+              <%= link_to "View Details", offer_path(offer), class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 </div>

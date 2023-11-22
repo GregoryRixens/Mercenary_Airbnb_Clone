@@ -1,15 +1,25 @@
+<<<<<<< HEAD
 <div class=“btn-group dropstart home-btn”>
   <a data-bs-toggle=“dropdown” aria-expanded=“false” data-bs-offset=“50,0">
     <%= image_tag ‘icons/home.svg’ %>
   </a>
   <ul class=“dropdown-menu text-center menu”>
 
+=======
+<div class="btn-group dropstart home-btn">
+  <a data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="40,0">
+    <%= image_tag 'icons/home.svg' %>
+  </a>
+  <ul class="dropdown-menu text-center menu">
+    <!-- Dropdown menu links -->
+>>>>>>> 8d18e8bcd767013ac708e0302883c2b71b84b917
     <% if user_signed_in? %>
       <li>
         <strong><%= current_user.user_name %></strong>
       </li>
       <hr>
       <li>
+<<<<<<< HEAD
         <%= link_to “Home”, root_path, class: “dropdown-item” %>
       </li>
       <li>
@@ -21,6 +31,19 @@
     <% else %>
       <li>
         <%= link_to “Login”, new_user_session_path, class: “nav-link” %>
+=======
+        <%= link_to "Home", root_path, class: "dropdown-item" %>
+      </li>
+      <li>
+        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+      </li>
+      <li>
+        <%= link_to "My profil", profil_path(current_user), class: "dropdown-item" %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+>>>>>>> 8d18e8bcd767013ac708e0302883c2b71b84b917
       </li>
     <% end %>
   </ul>
