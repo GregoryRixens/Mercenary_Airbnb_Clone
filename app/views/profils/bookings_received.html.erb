@@ -1,0 +1,26 @@
+<div class="container">
+  <h1><%= @profil.user_name %> Bookings</h1>
+
+  <% @bookings_received.each do |reservation| %>
+    <div class="card">
+      <div class="card-header">
+        <h2>Booking from: <%= reservation.user.user_name %></h2>
+      </div>
+      <div class="card-body">
+
+        <p>Description: <%= reservation.description %></p>
+        <p>Start Date: <%= reservation.start_date %></p>
+        <p>End Date: <%= reservation.end_date %></p>
+        <% offer = reservation.offer %>
+        <% if offer.present? %>
+          <p>Your offer: <%= offer.title %></p>
+          <!-- Add more details from the offer as needed -->
+        <% else %>
+          <p>Offer Not Found</p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to "Back to Profile", profil_path(@profil), class: "btn btn-primary" %>
+</div>

@@ -13,6 +13,7 @@
             <% else %>
             <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
             <% end %>
+            <p class="card-text"><%= offer.description %></p>
             <p class="card-text">Price: <%= number_to_currency(offer.price) %></p>
             <p class="card-text">Address: <%= offer.address %></p>
             <!-- Add more details as needed -->
