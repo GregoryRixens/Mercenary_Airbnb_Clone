@@ -1,6 +1,10 @@
 <div class="container">
   <h1><%= @offer.title %></h1>
+  <% if @offer.photo.attached? == true  %>
   <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+  <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
+  <% end %>
   <p>Price: <%= @offer.price.to_s %></p>
   <p>Description: <%= @offer.description %></p>
   <p>Address: <%= @offer.address %></p>

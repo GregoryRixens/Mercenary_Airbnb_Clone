@@ -8,6 +8,11 @@
       </div>
     </div>
     <div class="card-body">
+      <% if @profil.photo.attached? == true  %>
+      <%= cl_image_tag @profil.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+      <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
+      <% end %>
       <p>Email: <%= @profil.email %></p>
       <p>Username: <%= @profil.user_name %></p>
     </div>
