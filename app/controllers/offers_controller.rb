@@ -28,6 +28,7 @@ class OffersController < ApplicationController
   end
 
   def update
+
     if @offer.update(offer_params)
       redirect_to offer_path(@offer)
     else
@@ -37,7 +38,11 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
-    redirect_to offers_path, status: :see_other
+    if request.referer == offer_url(@offer)
+      redirect_to offers_path
+    else
+      redirect_to request.referer
+    end
   end
 
   private
