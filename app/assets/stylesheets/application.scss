@@ -10,3 +10,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.home-btn{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  img {
+    background-color: $white;
+    border-radius: 50%;
+    padding: 0.7rem;
+    &:hover{
+      background-color: $gray;
+    }
+  }
+  .menu{
+    border: 1px solid rgb(87, 87, 87);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+}
