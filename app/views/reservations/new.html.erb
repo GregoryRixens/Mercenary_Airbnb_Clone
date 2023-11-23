@@ -1,8 +1,9 @@
+<div class="container">
+<div class="d-flex justify-content-center">
 <%= simple_form_for [@offer, @reservation] do |f| %>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.input :description %>
   </div>
 
   <div class="field">
@@ -18,3 +19,5 @@
   <!-- other form fields -->
   <%= f.submit %>
 <% end %>
+</div>
+</div>
