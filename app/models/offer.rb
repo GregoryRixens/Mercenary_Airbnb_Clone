@@ -15,6 +15,7 @@ class Offer < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+
   def self.jobs
     ["Guerrier", "Mage", "Voleur", "Archer", "Ninja"]
   end

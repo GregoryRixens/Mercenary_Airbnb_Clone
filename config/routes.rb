@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :profils, only: [:show, :edit, :update]
   resources :profils do
     get 'bookings_received', on: :member
+    member do
+      get 'my_offers', to: 'profils#my_offers'
+      get 'my_bookings', to: 'profils#my_bookings'
+    end
   end
 
   put 'accepted_bookings/:id', to: 'reservations#accepted_bookings', as: 'accepted_bookings'

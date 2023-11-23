@@ -1,6 +1,8 @@
 class ProfilsController < ApplicationController
+  helper_method :has_offer?
   def show
     @profil = User.find(params[:id])
+
   end
 
   def edit
@@ -21,6 +23,20 @@ class ProfilsController < ApplicationController
     @profil = User.find(params[:id])
     @offers = @profil.offers.includes(:reservations)
     @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id)
+  end
+
+  def my_offers
+    @profil = User.find(params[:id])
+    @offers = @profil.offers
+  end
+
+  def my_bookings
+    @profil = User.find(params[:id])
+    @bookings = @profil.reservations
+  end
+
+  def has_offer?(job)
+    current_user.offers.exists?(job: job)
   end
 
   private
