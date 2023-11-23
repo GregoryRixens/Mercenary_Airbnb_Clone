@@ -5,6 +5,7 @@ gem "devise"
 gem "cloudinary"
 gem "dotenv-rails"
 gem 'faker'
+gem "pg_search"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
@@ -78,4 +79,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
