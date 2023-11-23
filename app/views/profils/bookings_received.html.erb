@@ -1,26 +1,32 @@
-<div class="container m-5 shadow rounded-4 p-3">
-  <h1><%= @profil.user_name %> bookings</h1>
+<div class="container m-5 rounded-4 p-5">
+    <h1><%= @profil.user_name %> bookings</h1>
 
-  <% @bookings_received.each do |reservation| %>
-    <div class="card rounded-2">
-      <div class="card-header">
-        <h2>Booking from: <%= reservation.user.user_name %></h2>
-      </div>
-      <div class="card-body">
+    <% @bookings_received.each do |reservation| %>
+      <div class="card rounded-2">
+        <div class="card-header">
+          <h2>Booking from: <%= reservation.user.user_name %></h2>
+        </div>
+        <div class="card-body">
 
-        <p>Description: <%= reservation.description %></p>
-        <p>Start Date: <%= reservation.start_date %></p>
-        <p>End Date: <%= reservation.end_date %></p>
-        <% offer = reservation.offer %>
-        <% if offer.present? %>
-          <p>Your offer: <%= offer.title %></p>
-          <!-- Add more details from the offer as needed -->
-        <% else %>
-          <p>Offer Not Found</p>
-        <% end %>
+          <p>Description: <%= reservation.description %></p>
+          <p>Start Date: <%= reservation.start_date %></p>
+          <p>End Date: <%= reservation.end_date %></p>
+          <p>Status: <%= reservation.status %></p>
+          <% offer = reservation.offer %>
+          <% if offer.present? %>
+            <p>Your offer: <%= offer.title %></p>
+            <!-- Add more details from the offer as needed -->
+          <% else %>
+            <p>Offer Not Found</p>
+          <% end %>
+          <% if !reservation.status %>
+            <%= link_to 'Accept',  accepted_bookings_path(reservation),class: 'btn btn-success', data: { turbo_method: :put } %>
+            <%= link_to 'Refuser', offer_reservation_path(reservation.offer, reservation),class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
-  <br>
-  <%= link_to "Back to Profile", profil_path(@profil), class: "btn btn-primary" %>
+    <% end %>
+    <br>
+    <%= link_to "Back to Profile", profil_path(@profil), class: "btn btn-primary" %>
+  </div>
 </div>

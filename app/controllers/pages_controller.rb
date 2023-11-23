@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @offers = Offer.last(10)
+    @offers = Offer.last(3)
   end
-
 end
