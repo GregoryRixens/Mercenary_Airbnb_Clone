@@ -1,16 +1,14 @@
-
-  <header class="header-home"> <!-- Modification de la classe header -->
-    <%= image_tag("logo_merc.png", alt: "Logo_merc", class: "logo-home") %> <!-- Modification de la classe logo -->
-    <div class="search-bar-container-home"> <!-- Modification de la classe search-bar-container -->
-      <input type="text" class="search-bar-home" placeholder="Recherche" /> <!-- Modification de la classe search-bar -->
-      <div class="filter-button-home"> <!-- Modification de la classe filter-button -->
-        <button id="filter-button-home">Filter</button> <!-- Modification de l'ID filter-button -->
-      </div>
-    </div>
-  </header>
+<%= render "pages/header"%>
 
   <div class="container-home"> <!-- Modification de la classe container -->
-    <h2>Latest Offers</h2>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="ms-3">
+        <h2>Best Offers</h2>
+      </div>
+      <div class="me-5">
+        <%= link_to "All offers <i class='fas fa-arrow-right'></i>".html_safe, offers_path, class: "btn btn-primary" %>
+      </div>
+    </div>
     <div class="cards-container-home"> <!-- Modification de la classe cards-container -->
       <% @offers.each do |offer| %>
         <div class="card-home shadow"> <!-- Modification de la classe card -->
