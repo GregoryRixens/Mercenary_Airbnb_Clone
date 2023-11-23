@@ -7,14 +7,6 @@
         <button id="filter-button-home">Filter</button> <!-- Modification de l'ID filter-button -->
       </div>
     </div>
-    <div class="header-buttons-home"> <!-- Modification de la classe header-buttons -->
-      <div class="button-container-home"> <!-- Modification de la classe button-container -->
-        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item-home", data: {turbo_method: :delete} %>
-      </div>
-      <div class="button-container-home"> <!-- Modification de la classe button-container -->
-        <%= link_to "My profil", profil_path(current_user), class: "dropdown-item-home" %>
-      </div>
-    </div>
   </header>
 
   <div class="container-home"> <!-- Modification de la classe container -->
