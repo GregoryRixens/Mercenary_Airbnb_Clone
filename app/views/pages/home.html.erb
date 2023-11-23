@@ -1,42 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offers Dashboard</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
-  <header class="header">
-    <%= image_tag("logo_merc.png", alt: "Logo_merc", class: "logo") %>
-    <div class="search-bar-container">
-      <input type="text" class="search-bar" placeholder="Recherche/filtres" />
-    </div>
-    <div class="header-buttons">
-      <div class="button-container">
-        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+
+  <header class="header-home"> <!-- Modification de la classe header -->
+    <%= image_tag("logo_merc.png", alt: "Logo_merc", class: "logo-home") %> <!-- Modification de la classe logo -->
+    <div class="search-bar-container-home"> <!-- Modification de la classe search-bar-container -->
+      <input type="text" class="search-bar-home" placeholder="Recherche" /> <!-- Modification de la classe search-bar -->
+      <div class="filter-button-home"> <!-- Modification de la classe filter-button -->
+        <button id="filter-button-home">Filter</button> <!-- Modification de l'ID filter-button -->
       </div>
-      <div class="button-container">
-        <%= link_to "My profil", profil_path(current_user), class: "dropdown-item" %>
+    </div>
+    <div class="header-buttons-home"> <!-- Modification de la classe header-buttons -->
+      <div class="button-container-home"> <!-- Modification de la classe button-container -->
+        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item-home", data: {turbo_method: :delete} %>
+      </div>
+      <div class="button-container-home"> <!-- Modification de la classe button-container -->
+        <%= link_to "My profil", profil_path(current_user), class: "dropdown-item-home" %>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <div class="container-home"> <!-- Modification de la classe container -->
     <h2>Latest Offers</h2>
-    <div class="cards-container">
+    <div class="cards-container-home"> <!-- Modification de la classe cards-container -->
       <% @offers.each do |offer| %>
-        <div class="card">
-          <div class="card-image">
+        <div class="card-home shadow"> <!-- Modification de la classe card -->
+          <div class="card-image-home"> <!-- Modification de la classe card-image -->
             <% if offer.photo.attached? == true  %>
               <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
             <% else %>
               <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
             <% end %>
           </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= offer.title %></h5>
-            <div class="card-description">
+          <div class="card-body-home"> <!-- Modification de la classe card-body -->
+            <h5 class="card-title-home"><%= offer.title %></h5> <!-- Modification de la classe card-title -->
+            <div class="card-description-home"> <!-- Modification de la classe card-description -->
               <p>Price: <%= number_to_currency(offer.price) %></p>
               <p>Address: <%= offer.address %></p>
               <%= link_to "View Details", offer_path(offer), class: "btn btn-primary" %>
@@ -45,6 +40,4 @@
         </div>
       <% end %>
     </div>
-  </main>
-</body>
-</html>
+  </div>
