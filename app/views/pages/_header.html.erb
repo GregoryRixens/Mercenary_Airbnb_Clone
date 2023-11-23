@@ -1,9 +1,19 @@
 <header class="header-home"> <!-- Modification de la classe header -->
-  <%= image_tag("logo_merc.png", alt: "Logo_merc", class: "logo-home") %> <!-- Modification de la classe logo -->
-    <div class="search-bar-container-home"> <!-- Modification de la classe search-bar-container -->
-      <input type="text" class="search-bar-home" placeholder="Recherche" /> <!-- Modification de la classe search-bar -->
-      <div class="filter-button-home"> <!-- Modification de la classe filter-button -->
-        <button id="filter-button-home">Filter</button> <!-- Modification de l'ID filter-button -->
+  <div class="search-bar-container-home"> <!-- Modification de la classe search-bar-container -->
+    <div class="row justify-content-center">
+      <div class="col my-3">
+        <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control flex-grow-1 me-2 search-bar-home",
+                placeholder: "Trouve l'aventurier de tes rêves"
+            %>
+          <%= submit_tag "Chercher", name: "", class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
+      <%# <div class="filter-button-home"> <!-- Modification de la classe filter-button -->
+      <button id="filter-button-home">Filter</button> <!-- Modification de l'ID filter-button --> %>
+    </div>
+  </div>
 </header>

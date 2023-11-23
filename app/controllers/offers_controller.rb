@@ -3,6 +3,9 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+    if params[:query].present?
+      @offers = @offers.search_by_title_and_description(params[:query])
+    end
   end
 
   def show
