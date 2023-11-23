@@ -280,7 +280,6 @@ reservation = Reservation.create(
   start_date: Faker::Date.between(from: 2.days.from_now, to: 3.days.from_now),
   end_date: Faker::Date.between(from: 4.days.from_now, to: 6.days.from_now),
   description: "Urgent besoin de gros bras pour casser des bouches",
-  status: "Pending",
   offer_id: Offer.find_by(title: "Loup solitaire chaud pour de la baston").id,
   user_id: User.find_by(user_name: "Thrain Rocfer").id
 )
@@ -290,7 +289,6 @@ reservation = Reservation.create(
   start_date: Faker::Date.between(from: 2.days.from_now, to: 3.days.from_now),
   end_date: Faker::Date.between(from: 4.days.from_now, to: 6.days.from_now),
   description: "Get in loser, on va tuer la vilaine sorcière",
-  status: "Accepted",
   offer_id: Offer.find_by(title: "Paladin des Cimes à louer").id,
   user_id: User.find_by(user_name: "Loup solitaire").id
 )
