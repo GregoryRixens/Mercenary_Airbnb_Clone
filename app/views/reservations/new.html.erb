@@ -1,23 +1,76 @@
-<div class="container">
-<div class="d-flex justify-content-center">
-<%= simple_form_for [@offer, @reservation] do |f| %>
+<div id="page-container">
+<div class="form-column">
 
-  <div class="field">
-    <%= f.input :description %>
+  <div class="container-resa">
+    <h2>Votre mission</h2>
+<div class="form-container">
+    <%= simple_form_for [@offer, @reservation] do |f| %>
+
+      <div class="field-resa">
+        <%= f.input :description, label: 'Description', input_html: { class: 'form-control' } %>
+      </div>
+
+      <div class="field-resa">
+        <%= f.input :start_date, as: :datetime, label: 'Date de début', input_html: { class: 'form-control', data: { controller: "flatpickr" } } %>
+      </div>
+
+      <div class="field-resa">
+        <%= f.input :end_date, as: :datetime, label: 'Date de fin', input_html: { class: 'form-control', data: { controller: "flatpickr" } } %>
+      </div>
+
+      <!-- Add other fields as needed -->
+
+      <div class="field-resa">
+        <%= f.button :submit, 'Réserver', class: 'btn btn-primary' %>
+      </div>
+
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :start_date %>
-    <%= f.datetime_local_field :start_date, data: { controller: "flatpickr" } %>
-  </div>
+  <!-- Separate form for payment -->
+ <!-- Separate form for payment -->
+<%= simple_form_for :payment, url: '#', method: :post do |f| %>
+  <div class="container-payment">
+    <h2>Informations de paiement</h2>
 
-  <div class="field">
-    <%= f.label :end_date %>
-    <%= f.datetime_local_field :end_date, data: { controller: "flatpickr" } %>
-  </div>
+    <div class="field-resa">
+      <%= f.input :card_name, label: "Nom sur la carte", required: true, input_html: { class: 'form-control' } %>
+    </div>
 
-  <!-- other form fields -->
-  <%= f.submit %>
+    <div class="field-resa">
+      <%= f.input :card_number, label: "Numéro de la carte", required: true, input_html: { class: 'form-control' } %>
+    </div>
+
+    <div class="field-resa">
+      <%= f.input :card_expiry, label: "Date d'expiration", as: :string, required: true, input_html: { class: 'form-control' } %>
+    </div>
+
+    <div class="field-resa">
+      <%= f.input :card_cvv, label: "CVV", required: true, input_html: { class: 'form-control' } %>
+    </div>
+  </div>
 <% end %>
+
+
+  <!-- Payment bar -->
+  <div class="payment-bar">
+    <!-- Payment icons -->
+    <div class="payment-icons">
+      <%= image_tag 'icons/visa.svg', alt: 'Visa', class: 'payment-icon' %>
+      <%= image_tag 'icons/mastercard.svg', alt: 'MasterCard', class: 'payment-icon' %>
+      <%= image_tag 'icons/amex.svg', alt: 'American Express', class: 'payment-icon' %>
+      <%= image_tag 'icons/paypal.svg', alt: 'PayPal', class: 'payment-icon' %>
+      <!-- Add more icons as needed -->
+    </div>
+  </div>
+
 </div>
+</div>
+
+
+    <%= image_tag 'icons/adventure.svg', alt: "Conditions d'annulation", class: 'cancellation-logo' %>
+    <div class="cancellation-policy">
+    <h3>Conditions d'annulation</h3>
+    <p>Cette réservation n'est pas remboursable, sauf en cas de non acceptation du mercenaire. En savoir plus</p>
+  </div>
 </div>

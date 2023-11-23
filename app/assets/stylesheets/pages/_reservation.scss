@@ -1,0 +1,81 @@
+/* Use Flexbox to create a two-column layout */
+#page-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+}
+
+#page-container .form-container {
+  display: flex;
+  flex-direction: row; /* Placez les colonnes côte à côte */
+}
+
+/* Styles pour chaque colonne de formulaire */
+#page-container .form-column {
+  flex: 1; /* Chaque colonne prendra la moitié de la largeur disponible */
+  margin: 10px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Styles for the form container */
+#page-container .container-resa {
+  flex: 1; /* Allow the form to fill the available space */
+  margin: 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 0; /* Since it fills the height, no border radius is needed */
+  box-shadow: none; /* No shadow for a full-height form */
+  overflow-y: auto; /* Allows scrolling if the content exceeds the specified height */
+  max-height: 680px; /* Set a maximum height for the container; adjust as needed */
+}
+
+/* Payment bar at the bottom */
+#page-container .payment-bar {
+  width: 100%;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light grey background, adjust as needed */
+  border-top: 1px solid #ccc; /* A border to separate it from the form */
+}
+
+/* Make adjustments to other styles as necessary */
+/* ... */
+
+/* Style the payment icons */
+#page-container .payment-icons {
+  display: flex;
+  justify-content: center; /* Center the payment icons */
+  align-items: center;
+  gap: 10px; /* Add space between the icons */
+}
+
+#page-container .payment-icon {
+  display: inline-block;
+  width: 40px; /* Fixed width for icons */
+  height: auto;
+  /* Add more styles as needed */
+}
+
+/* Other necessary styles */
+/* ... */
+
+/* Augmentez la taille du logo "Adventure" */
+#page-container .cancellation-logo {
+  width: 600px; /* Ajustez la taille selon vos besoins */
+  height: 650px;
+  display: block;
+  margin-left: 110px; /* Déplacez le logo vers la droite */
+}
+
+/* Centrez le texte verticalement et horizontalement en bas de la page */
+#page-container .cancellation-policy {
+  text-align: center; /* Centrez le texte horizontalement */
+  position: absolute;
+  margin-left: 820px;
+  margin-top: 667px;
+  font-size: 13px;
+}
