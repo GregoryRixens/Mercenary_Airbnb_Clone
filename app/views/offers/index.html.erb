@@ -23,6 +23,7 @@
             <h5 class="card-title-home"><%= offer.title %></h5> <!-- Modification de la classe card-title -->
             <div class="card-description-home"> <!-- Modification de la classe card-description -->
               <p>Price: <%= number_to_currency(offer.price) %></p>
+              <p>Classe: <%= offer.job %></p>
               <p>Address: <%= offer.address %></p>
               <%= link_to "View Details", offer_path(offer), class: "btn btn-primary" %>
             </div>

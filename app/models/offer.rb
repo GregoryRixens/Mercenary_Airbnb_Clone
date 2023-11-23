@@ -10,8 +10,12 @@ class Offer < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_title_and_description,
-    against: [ :title, :description, :address ],
+    against: [ :title, :description, :address, :job ],
     using: {
       tsearch: { prefix: true }
     }
+
+  def self.jobs
+    ["Guerrier", "Mage", "Voleur", "Archer", "Ninja"]
+  end
 end
