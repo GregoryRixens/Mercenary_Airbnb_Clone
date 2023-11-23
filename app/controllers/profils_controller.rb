@@ -20,7 +20,19 @@ class ProfilsController < ApplicationController
   def bookings_received
     @profil = User.find(params[:id])
     @offers = @profil.offers.includes(:reservations)
-    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id)
+    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id).where(status: "pending")
+  end
+
+  def bookings_received_accepted
+    @profil = User.find(params[:id])
+    @offers = @profil.offers.includes(:reservations)
+    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id).where(status: "accepted")
+  end
+
+  def bookings_received_declined
+    @profil = User.find(params[:id])
+    @offers = @profil.offers.includes(:reservations)
+    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id).where(status: "declined")
   end
 
   private
