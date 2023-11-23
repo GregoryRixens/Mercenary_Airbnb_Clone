@@ -12,7 +12,8 @@ user = User.create(
   password: "azerty",
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Guerrier"
+  job: "Guerrier",
+  rank: "A"
 )
 
 offer = Offer.create(
@@ -21,7 +22,8 @@ offer = Offer.create(
   address: "Forteresse de la Haute Crête",
   description: "Mon nom est Thrain Rocfer, paladin des cimes et gardien des montagnes. Ma hache de Pierre-Éclat fend les rochers avec une force inébranlable, et mon honneur est aussi solide que la pierre des cimes. Je défends les montagnes contre toute menace, et ma loyauté envers mes compagnons est inébranlable. Mon repaire se trouve dans la Forteresse de la Haute Crête, où les sommets touchent le ciel. Engagez-moi si vous recherchez un protecteur dévoué des montagnes et un guerrier implacable.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[0]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -32,7 +34,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Mage"
+  job: "Mage",
+  rank: "B"
 )
 
 offer = Offer.create(
@@ -41,7 +44,8 @@ offer = Offer.create(
   address: "Quartier des Arcanes, Tour de la Flamme Éternelle",
   description: "Je suis Pyrosphinx, maître des flammes qui danse au creux de mes mains. Ma magie embrase l'horizon, réduisant en cendres ceux qui osent défier la puissance du feu. Les contrats ardents sont ma passion, et la destruction est mon art. Si vous avez besoin de la chaleur dévastatrice de la magie du feu, je suis votre sorcier.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[1]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -52,7 +56,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Guerrier"
+  job: "Guerrier",
+  rank: "A"
 )
 user.save!
 
@@ -62,7 +67,8 @@ offer = Offer.create(
   address: "Forge du Bouclier, Rue des Armuriers",
   description: "Je suis Mur de Fer, le rempart indestructible qui défend contre les assauts du chaos. Mon bouclier est impénétrable, et ma loyauté est aussi solide que l'acier. Si vous cherchez un gardien pour veiller sur vos arrières, je suis prêt à être le mur qui sépare la vie de la mort.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[2]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -73,7 +79,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Archer"
+  job: "Archer",
+  rank: "C"
 )
 user.save!
 
@@ -83,7 +90,8 @@ offer = Offer.create(
   address: "Bois d'Émeraude, Campement des Archers",
   description: "Je suis Flèche d'Argent, l'archer elfique dont la précision est légendaire. Mon regard perçant trouve sa cible, et ma flèche danse avec le vent pour atteindre son but. Que ce soit en chasse ou en guerre, engager mes services assure que chaque tir compte et que chaque ennemi est marqué du sceau de la défaite.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[3]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -94,7 +102,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Mage"
+  job: "Mage",
+  rank: "A"
 )
 user.save!
 
@@ -104,7 +113,8 @@ offer = Offer.create(
   address: "Marais des Âmes Perdues, Tanière de l'Ombre",
   description: "Ombreputride, la sorcière des marais, maîtresse des arts nécromantiques. Les âmes perdues répondent à mon appel, et la magie sombre coule dans mes veines. Si vous avez besoin de puissance occulte, de marées d'ombres et de serviteurs des ténèbres, vous ne trouverez pas de nécromancienne plus habile.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[4]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -115,7 +125,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Mage"
+  job: "Mage",
+  rank: "F"
 )
 user.save!
 
@@ -125,7 +136,8 @@ offer = Offer.create(
   address: "Place du Savoir, Bibliothèque Interdite",
   description: "Je suis Antiarcane, le maître de la contre-magie. Les enchantements se brisent sous ma volonté, et les arcanes de mes ennemis se dissipent comme la brume du matin. Si vous cherchez à annihiler la magie adverse et à déjouer les sorts, engagez-moi, et la puissance mystique de vos adversaires ne sera qu'un souvenir.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[5]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -136,7 +148,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Voleur"
+  job: "Voleur",
+  rank: "B"
 )
 user.save!
 
@@ -146,7 +159,8 @@ offer = Offer.create(
   address: "Repaire des Voleurs, Ruelle des Ombres",
   description: "Fauconfurtif, le voleur agile et l'as de la furtivité. Mes mains sont plus rapides que l'œil, et mes talents de pickpocket sont inégalés. Si vous avez besoin de compétences subtils pour récupérer des informations ou des trésors, faites appel à moi, le roi des ombres et des secrets.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[6]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -157,7 +171,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Guerrier"
+  job: "Guerrier",
+  rank: "B"
 )
 user.save!
 
@@ -167,7 +182,8 @@ offer = Offer.create(
   address: "Temple de la Lueur Divine, Salle des Guérisseurs",
   description: "Je suis Lumière Bienfaisante, le guérisseur béni par les cieux. Mes mains émettent une lumière apaisante qui guérit les blessures et dissipe les afflictions. Si vous cherchez la guérison divine et la protection céleste, mes services sont à votre disposition pour ramener la vie là où règne la souffrance.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[7]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -178,7 +194,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Voleur"
+  job: "Voleur",
+  rank: "F"
 )
 user.save!
 
@@ -186,9 +203,10 @@ offer = Offer.create(
   title: "Le ménestrel des enchantements magiques",
   price: 100,
   address: "Taverne de la Harpe d'Argent, Scène des Conteurs",
-  description: "Je suis Pyrosphinx, maître des flammes qui danse au creux de mes mains. Ma magie embrase l'horizon, réduisant en cendres ceux qui osent défier la puissance du feu. Les contrats ardents sont ma passion, et la destruction est mon art. Si vous avez besoin de la chaleur dévastatrice de la magie du feu, je suis votre sorcier.",
+  description: "Je suis Harmonibard, maître des flammes qui danse au creux de mes mains. Ma magie embrase l'horizon, réduisant en cendres ceux qui osent défier la puissance du feu. Les contrats ardents sont ma passion, et la destruction est mon art. Si vous avez besoin de la chaleur dévastatrice de la magie du feu, je suis votre sorcier.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[8]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -199,7 +217,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Ninja"
+  job: "Ninja",
+  rank: "S"
 )
 user.save!
 
@@ -209,7 +228,8 @@ offer = Offer.create(
   address: "Zatoishi, Switzerland",
   description: "Kagejin, le ninja mystérieux et agile, maître de l'art du ninjutsu. Mes mouvements sont aussi fluides que l'ombre elle-même, et mes attaques sont aussi silencieuses que le vent. Armé de mes kunai et shuriken, je suis prêt à accomplir les missions les plus périlleuses. Mon repaire se trouve dans les recoins secrets du Village Caché de l'Ombre, où seule la nuit révèle mes véritables capacités.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[9]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -220,7 +240,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Guerrier"
+  job: "Guerrier",
+  rank: "B"
 )
 user.save!
 
@@ -230,7 +251,8 @@ offer = Offer.create(
   address: "Grotte des Hurlements Sauvages",
   description: "Je suis Brise-Crâne, le troll colossal maître de la force brute et de la désolation. Ma massue écrasante fend l'air avec une puissance dévastatrice, et mes rugissements font trembler la terre. Mon repaire se trouve dans la Grotte des Hurlements Sauvages, où la brutalité règne en maître. Engagez-moi si vous avez besoin d'une montagne de force pour écraser vos ennemis et semer le chaos sur le champ de bataille.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[10]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -241,7 +263,8 @@ user = User.create(
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Ninja"
+  job: "Ninja",
+  rank: "S"
 )
 user.save!
 
@@ -251,7 +274,8 @@ offer = Offer.create(
   address: "Les tréfonds, Internet",
   description: "Woof woof. Wif. Woof wif woof",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[11]}"), filename: "file#{user.user_name}")
 offer.save!
@@ -262,7 +286,8 @@ user = User.create(
   password: "azerty",
   last_name: Faker::Games::ElderScrolls.last_name,
   first_name: Faker::Books::TheKingkillerChronicle.creature,
-  job: "Guerrier"
+  job: "Guerrier",
+  rank: "A"
 )
 
 offer = Offer.create(
@@ -271,7 +296,8 @@ offer = Offer.create(
   address: "Refuge de l'Aigle Noir, Vallée des Brumes",
   description: "Je suis Loup Solitaire, le mercenaire légendaire et maître du Chemin de l'Aube. Mes techniques d'arts martiaux sont inégalées, et ma lame est celle de la justice. Seul dans la bataille, je suis le guerrier solitaire qui marche entre les ombres et la lumière. Mon refuge se trouve dans la Vallée des Brumes, où seuls ceux qui cherchent la véritable voie peuvent me trouver. Engagez-moi si vous recherchez un compagnon silencieux, un défenseur de la justice, et un maître du combat rapproché.",
   user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job
+  job: user.job,
+  rank: user.rank
 )
 offer.photo.attach(io: URI.open("#{array_url[12]}"), filename: "file#{user.user_name}")
 offer.save!

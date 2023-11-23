@@ -24,6 +24,7 @@
             <div class="card-description-home"> <!-- Modification de la classe card-description -->
               <p>Price: <%= number_to_currency(offer.price) %></p>
                <p>Classe: <%= offer.job %></p>
+               <p>Classe: <%= offer.rank %></p>
               <p>Address: <%= offer.address %></p>
               <%= link_to "View Details", offer_path(offer), class: "btn btn-primary" %>
             </div>
