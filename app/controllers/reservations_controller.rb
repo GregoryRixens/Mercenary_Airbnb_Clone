@@ -35,6 +35,13 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def accepted_bookings
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = true
+    @reservation.save
+    redirect_to request.referer
+  end
+
   private
 
   def offer_id
