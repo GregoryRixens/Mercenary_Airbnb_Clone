@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 p-5">
   <h1><%= @offer.title %></h1>
 
   <p>Created by: <%= @offer.user.user_name %></p>
@@ -8,6 +8,8 @@
   <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
   <% end %>
   <p>Price: <%= @offer.price.to_s %></p>
+  <p>Classe: <%= @offer.job %></p>
+  <p>Classe: <%= @offer.rank %></p>
   <p>Description: <%= @offer.description %></p>
   <p>Address: <%= @offer.address %></p>
 

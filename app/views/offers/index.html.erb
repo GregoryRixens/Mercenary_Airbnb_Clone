@@ -1,21 +1,30 @@
 <%= render "pages/header" %>
 
-  <div class="container">
-    <h2>Latest Offers</h2>
-    <div class="cards-container">
+<div class="container-home"> <!-- Modification de la classe container -->
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="ms-3">
+        <h2>All Offers</h2>
+      </div>
+      <div class="me-5">
+        <%= link_to "All offers <i class='fas fa-arrow-right'></i>".html_safe, offers_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+    <div class="cards-container-home"> <!-- Modification de la classe cards-container -->
       <% @offers.each do |offer| %>
-        <div class="card">
-          <div class="card-image">
+        <div class="card-home shadow"> <!-- Modification de la classe card -->
+          <div class="card-image-home"> <!-- Modification de la classe card-image -->
             <% if offer.photo.attached? == true  %>
               <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
             <% else %>
               <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
             <% end %>
           </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= offer.title %></h5>
-            <div class="card-description">
+          <div class="card-body-home"> <!-- Modification de la classe card-body -->
+            <h5 class="card-title-home"><%= offer.title %></h5> <!-- Modification de la classe card-title -->
+            <div class="card-description-home"> <!-- Modification de la classe card-description -->
               <p>Price: <%= number_to_currency(offer.price) %></p>
+              <p>Classe: <%= offer.job %></p>
+               <p>Niveau: <%= offer.rank %></p>
               <p>Address: <%= offer.address %></p>
               <%= link_to "View Details", offer_path(offer), class: "btn btn-primary" %>
             </div>
@@ -23,4 +32,4 @@
         </div>
       <% end %>
     </div>
-</div>
+  </div>
