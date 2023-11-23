@@ -4,7 +4,7 @@ User.destroy_all
 Reservation.destroy_all
 puts 'Creating 12 users and each user has an offer...'
 array_url = ["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/882367c8-9104-494d-8a9c-62384aa16beb/dftkr9n-15698c0a-cbab-4427-bbf2-0d52d21e58ff.jpg/v1/fill/w_894,h_894,q_70,strp/dnd_character_profile__2_by_hypnoman172feb_dftkr9n-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzg4MjM2N2M4LTkxMDQtNDk0ZC04YTljLTYyMzg0YWExNmJlYlwvZGZ0a3I5bi0xNTY5OGMwYS1jYmFiLTQ0MjctYmJmMi0wZDUyZDIxZTU4ZmYuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.WtRIuMnKQdyjlf-o2oLUr2wph9qLplT2ETIKqI6uXvM", "https://r2.starryai.com/results/507668513/852d5d14-0d02-4536-b33d-7045291bb41b.webp", "https://storage.googleapis.com/pai-images/c17d73f095a04d4d9c2fd3689b993c41.jpeg", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/842c4406-8fa0-436e-89c7-54c953cc20df/d9jn27d-92afe804-3d1b-42c3-ac17-f43a01d13c5e.jpg/v1/fill/w_510,h_700,q_70,strp/ellar_by_in2eternity_d9jn27d-350t-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAwIiwicGF0aCI6IlwvZlwvODQyYzQ0MDYtOGZhMC00MzZlLTg5YzctNTRjOTUzY2MyMGRmXC9kOWpuMjdkLTkyYWZlODA0LTNkMWItNDJjMy1hYzE3LWY0M2EwMWQxM2M1ZS5qcGciLCJ3aWR0aCI6Ijw9NTgzIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.rnSGKI_JyK02EPjkQ0BnZyDZCDLKf4Ejyy47Tu8cxzY", "https://t4.ftcdn.net/jpg/05/71/19/33/240_F_571193377_obyyXxhLDYlOOPWhi2GOS5WGgzM4UiFx.jpg", "https://as2.ftcdn.net/v2/jpg/05/89/15/41/1000_F_589154156_ohBYQrjmRx9fwAXtG6hcV7mQ4j1BOqI7.jpg", "https://cdna.artstation.com/p/assets/images/images/009/202/780/large/lionel-dorviler-speed-chara-4-wip7-final.jpg?1517672511", "https://pics.craiyon.com/2023-05-27/472dd2c9401a47c48a896bf5b6b409c2.webp", "https://i.redd.it/8nq7ixsvtuk81.jpg", "https://png.pngtree.com/thumb_back/fw800/background/20230516/pngtree-the-ninja-image_2574632.jpg", "https://storage.googleapis.com/pai-images/4a02e5c0ed744e8da036e452e81cabde.jpeg", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cc8bb657-1354-40d3-ad4f-a016115e379a/d82jtov-0a31baf9-937b-46ad-b925-a5ebca6e7f59.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NjOGJiNjU3LTEzNTQtNDBkMy1hZDRmLWEwMTYxMTVlMzc5YVwvZDgyanRvdi0wYTMxYmFmOS05MzdiLTQ2YWQtYjkyNS1hNWViY2E2ZTdmNTkuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3Q0Edm_KWF2SLPqnSVrNPu8MNwWk40mKq_UjuwMMVzc", "https://img.freepik.com/photos-premium/photo-detaillee-du-loup-gris-portant-costume-guerrier_982005-5540.jpg?size=338&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais"]
-job_list = ["Guerrier", "Mage", "Voleur", "Archer", "Ninja"]
+# job_list = ["Guerrier", "Mage", "Voleur", "Archer", "Ninja"]
 
 user = User.create(
   user_name: "Thrain Rocfer",
@@ -31,7 +31,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Mage"
 )
 
 offer = Offer.create(
@@ -50,7 +51,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Guerrier"
 )
 user.save!
 
@@ -70,7 +72,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Archer"
 )
 user.save!
 
@@ -90,7 +93,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Mage"
 )
 user.save!
 
@@ -110,7 +114,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Mage"
 )
 user.save!
 
@@ -130,7 +135,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Voleur"
 )
 user.save!
 
@@ -150,7 +156,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Guerrier"
 )
 user.save!
 
@@ -170,7 +177,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Voleur"
 )
 user.save!
 
@@ -190,7 +198,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Ninja"
 )
 user.save!
 
@@ -210,7 +219,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Guerrier"
 )
 user.save!
 
@@ -230,7 +240,8 @@ user = User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password(min_length: 8),
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Ninja"
 )
 user.save!
 
@@ -250,7 +261,8 @@ user = User.create(
   email: "test2@test.fr",
   password: "azerty",
   last_name: Faker::Games::ElderScrolls.last_name,
-  first_name: Faker::Books::TheKingkillerChronicle.creature
+  first_name: Faker::Books::TheKingkillerChronicle.creature,
+  job: "Guerrier"
 )
 
 offer = Offer.create(

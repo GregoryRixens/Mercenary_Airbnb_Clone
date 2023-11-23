@@ -2,6 +2,7 @@
   <%= f.input :title, input_html: { maxlength: 255 }  %>
   <%= f.input :address, input_html: { maxlength: 255 }  %>
   <%= f.input :price, numericality: { greater_than_or_equal_to: 0 } %>
+  <%= f.input :job, as: :select, collection: Offer.jobs, prompt: 'Choisir sa classe', label: false  %>
   <%= f.input :description, input_html: { maxlength: 1000 } %>
   <%= f.input :photo, as: :file %>
   <%= f.submit class: "btn btn-primary" %>
