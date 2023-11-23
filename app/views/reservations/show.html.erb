@@ -1,6 +1,10 @@
+  <div class="container">
+  <div class="">
   <h1>You ordered</h1>
   <h2><%= @reservation.offer.title %></h2>
   <p>Price: <%= @reservation.offer.price.to_s %></p>
   <p>Address: <%= @reservation.offer.address %></p>
   <p>Duration:</p>
   <%= @reservation.start_date  %> to <%= @reservation.end_date  %>
+  </div>
+  </div>
