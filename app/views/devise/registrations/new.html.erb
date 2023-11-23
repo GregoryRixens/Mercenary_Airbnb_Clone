@@ -1,7 +1,7 @@
-<div class="container">
-<div class="py-2 d-flex justify-items-center">
-  <div class="mt-2">
-<h2>Sign up</h2>
+<div class="container custom-form-container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6 custom-form-column">
+      <h2 class="custom-form-header">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
@@ -27,11 +27,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "btn btn-warning" %>
+    <%= f.button :submit, "Sign up", class: "custom-button" %>
   </div>
 <% end %>
-
-
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-</div>
 </div>

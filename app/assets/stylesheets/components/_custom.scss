@@ -1,0 +1,31 @@
+.custom-form-container {
+  height: 100vh;
+  padding: 2rem;; /* Adjust the padding as needed */
+}
+
+.custom-form-column {
+  background-color: #D9D9D9; /* Light gray background */
+  border: 2px solid #000000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 2rem;
+  margin: 0 auto; /* Center the column */
+}
+
+.custom-form-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.custom-button {
+  background-color: #8b836a; /* Yellow background */
+  color: #ffffff; /* White text color */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #bebdb8; /* Darker yellow on hover */
+}
