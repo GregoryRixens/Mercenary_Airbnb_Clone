@@ -20,6 +20,7 @@ class Offer < ApplicationRecord
     ["Guerrier", "Mage", "Voleur", "Archer", "Ninja"]
   end
 
+  RANKS =  ["S", "A", "B", "C", "F"]
   def self.ranks
     ["S", "A", "B", "C", "F"]
   end
