@@ -15,7 +15,7 @@
 #page-container .form-column {
   flex: 1; /* Chaque colonne prendra la moitié de la largeur disponible */
   margin: 10px;
-  background-color: #fff;
+  background-color: #D5CEA3;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@
   flex: 1; /* Allow the form to fill the available space */
   margin: 0;
   padding: 20px;
-  background-color: #fff;
+  background-color: #D5CEA3;
   border-radius: 0; /* Since it fills the height, no border radius is needed */
   box-shadow: none; /* No shadow for a full-height form */
   overflow-y: auto; /* Allows scrolling if the content exceeds the specified height */
@@ -38,8 +38,8 @@
 #page-container .payment-bar {
   width: 100%;
   padding: 20px;
-  background-color: #f8f9fa; /* Light grey background, adjust as needed */
-  border-top: 1px solid #ccc; /* A border to separate it from the form */
+  background-color: #D5CEA3; /* Light grey background, adjust as needed */
+  border-top: 1px solid #D5CEA3; /* A border to separate it from the form */
 }
 
 /* Make adjustments to other styles as necessary */
