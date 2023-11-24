@@ -7,7 +7,7 @@
           <%= f.input :search_query, label: false, placeholder: "Rechercher un gros dur", required: false %>
         </div>
         <div  class="d-inline-flex p-2">
-          <%= f.input :rank, collection: Offer::RANKS, required: false, label: false %>
+          <%= f.input :rank, collection: Offer::RANKS, required: false, label: false, prompt: "Rang" %>
         </div>
         <div  class="d-inline-flex p-2">
           <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
