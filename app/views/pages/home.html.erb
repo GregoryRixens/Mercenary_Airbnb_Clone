@@ -29,8 +29,8 @@
               <p><%= offer.address %></p>
             </div>
             <div class="d-flex justify-content-between align-items-center mx-3 lien">
-              <h5 class="mt-3"><%= number_to_currency(offer.price) %>/H</h5>
-              <%= link_to image_tag('icons/diploma-scroll.svg', size: '30x30') + "<i class='fas fa-arrow-right-long fa-3x'></i>".html_safe, offer_path(offer), class: "btn d-flex align-items-center text-black" %>
+              <h5 class="mt-3"><%= number_to_currency(offer.price) %> / H</h5>
+              <%= link_to image_tag('icons/scroll-unfurled.svg', size: '30x30') + "<i class='fas fa-arrow-right-long fa-3x'></i>".html_safe, offer_path(offer), class: "btn d-flex align-items-center text-black" %>
             </div>
           </div>
         </div>
