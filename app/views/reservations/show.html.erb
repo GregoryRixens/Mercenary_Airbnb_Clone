@@ -7,4 +7,10 @@
     <p>Address: <%= @reservation.offer.address %></p>
     <p>Duration:</p>
     <p><%= format_date_for_human({1=>2023, 2=>11, 3=>30}) %></p>
+    <div class="text-center d-flex justify-content-between">
+      <%= link_to "<i class='fas fa-arrow-left-long fa-3x'></i> <i class='fas fa-house-user fa-3x'></i>".html_safe, offers_path, class: "btn" %>
+      <%= link_to image_tag('icons/person.svg', size: '40x40') + "<i class='fas fa-arrow-right-long fa-3x'></i>".html_safe, profil_path(current_user), class: "btn d-flex align-items-center" %>
+    </div>
   </div>
+
+</div>
