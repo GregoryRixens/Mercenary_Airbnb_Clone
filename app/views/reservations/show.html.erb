@@ -1,10 +1,10 @@
-  <div class="container">
-  <div class="">
-  <h1>You ordered</h1>
-  <h2><%= @reservation.offer.title %></h2>
-  <p>Price: <%= @reservation.offer.price.to_s %></p>
-  <p>Address: <%= @reservation.offer.address %></p>
-  <p>Duration:</p>
-  <%= @reservation.start_date  %> to <%= @reservation.end_date  %>
-  </div>
+<div class="container-order">
+  <div class="reservation-details">
+    <h1>You ordered</h1>
+    <h2><%= @reservation.offer.title %></h2>
+    </div>
+    <p>Price: <%= number_to_currency(@reservation.offer.price) %></p>
+    <p>Address: <%= @reservation.offer.address %></p>
+    <p>Duration:</p>
+    <p><%= format_date_for_human({1=>2023, 2=>11, 3=>30}) %></p>
   </div>
