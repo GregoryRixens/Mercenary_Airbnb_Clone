@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     get 'bookings_received', on: :member
     get 'bookings_received_accepted', on: :member
     get 'bookings_received_declined', on: :member
+    member do
+      get 'my_offers', to: 'profils#my_offers'
+      get 'my_bookings', to: 'profils#my_bookings'
+    end
   end
 
   put 'accepted_bookings/:id', to: 'reservations#accepted_bookings', as: 'accepted_bookings'

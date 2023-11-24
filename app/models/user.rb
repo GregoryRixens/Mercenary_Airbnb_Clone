@@ -12,7 +12,9 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { maximum: 255 }
   validates :first_name, presence: true, length: { maximum: 255 }
 
+
   private
+
 
   def password_required?
     new_record? || password.present? || password_confirmation.present?
