@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_23_142225) do
     t.string "start_date"
     t.string "end_date"
     t.string "description"
-    t.boolean "status", default: false
+    t.string "status", default: "pending"
     t.bigint "offer_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

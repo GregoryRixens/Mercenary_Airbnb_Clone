@@ -1,6 +1,8 @@
 class ProfilsController < ApplicationController
+  helper_method :has_offer?
   def show
     @profil = User.find(params[:id])
+
   end
 
   def edit
@@ -20,7 +22,33 @@ class ProfilsController < ApplicationController
   def bookings_received
     @profil = User.find(params[:id])
     @offers = @profil.offers.includes(:reservations)
-    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id)
+    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id).where(status: "pending")
+  end
+
+  def bookings_received_accepted
+    @profil = User.find(params[:id])
+    @offers = @profil.offers.includes(:reservations)
+    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id).where(status: "accepted")
+  end
+
+  def bookings_received_declined
+    @profil = User.find(params[:id])
+    @offers = @profil.offers.includes(:reservations)
+    @bookings_received = Reservation.where(offer_id: @offers.pluck(:id)).where.not(user_id: @profil.id).where(status: "declined")
+  end
+
+  def my_offers
+    @profil = User.find(params[:id])
+    @offers = @profil.offers
+  end
+
+  def my_bookings
+    @profil = User.find(params[:id])
+    @bookings = @profil.reservations
+  end
+
+  def has_offer?(job)
+    current_user.offers.exists?(job: job)
   end
 
   private

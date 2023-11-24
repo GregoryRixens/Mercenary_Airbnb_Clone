@@ -15,6 +15,8 @@ user = User.create(
   job: "Guerrier",
   rank: "A"
 )
+user.photo.attach(io: URI.open("#{array_url[0]}"), filename: "file#{user.rank}")
+user.save!
 
 offer = Offer.create(
   title: "Paladin des Cimes à louer",
@@ -37,6 +39,8 @@ user = User.create(
   job: "Mage",
   rank: "B"
 )
+user.photo.attach(io: URI.open("#{array_url[1]}"), filename: "file#{user.rank}")
+user.save!
 
 offer = Offer.create(
   title: "Le danseur des flammes",
@@ -59,6 +63,7 @@ user = User.create(
   job: "Guerrier",
   rank: "A"
 )
+user.photo.attach(io: URI.open("#{array_url[2]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -82,6 +87,7 @@ user = User.create(
   job: "Archer",
   rank: "C"
 )
+user.photo.attach(io: URI.open("#{array_url[3]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -105,6 +111,7 @@ user = User.create(
   job: "Mage",
   rank: "A"
 )
+user.photo.attach(io: URI.open("#{array_url[4]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -128,6 +135,7 @@ user = User.create(
   job: "Mage",
   rank: "F"
 )
+user.photo.attach(io: URI.open("#{array_url[5]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -151,6 +159,7 @@ user = User.create(
   job: "Voleur",
   rank: "B"
 )
+user.photo.attach(io: URI.open("#{array_url[6]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -174,6 +183,7 @@ user = User.create(
   job: "Guerrier",
   rank: "B"
 )
+user.photo.attach(io: URI.open("#{array_url[7]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -197,6 +207,7 @@ user = User.create(
   job: "Voleur",
   rank: "F"
 )
+user.photo.attach(io: URI.open("#{array_url[8]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -220,6 +231,7 @@ user = User.create(
   job: "Ninja",
   rank: "S"
 )
+user.photo.attach(io: URI.open("#{array_url[9]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -243,6 +255,7 @@ user = User.create(
   job: "Guerrier",
   rank: "B"
 )
+user.photo.attach(io: URI.open("#{array_url[10]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -266,6 +279,7 @@ user = User.create(
   job: "Ninja",
   rank: "S"
 )
+user.photo.attach(io: URI.open("#{array_url[11]}"), filename: "file#{user.rank}")
 user.save!
 
 offer = Offer.create(
@@ -289,6 +303,8 @@ user = User.create(
   job: "Guerrier",
   rank: "A"
 )
+user.photo.attach(io: URI.open("#{array_url[12]}"), filename: "file#{user.rank}")
+user.save!
 
 offer = Offer.create(
   title: "Loup solitaire chaud pour de la baston",
