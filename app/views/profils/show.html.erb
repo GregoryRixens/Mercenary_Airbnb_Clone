@@ -16,31 +16,31 @@
             <hr>
             <div>
               <h1><%= @profil.first_name %> <%= @profil.last_name %></h1>
-              <p>username : <%= @profil.user_name %></p>
+              <p>Nom d'utilisateur : <%= @profil.user_name %></p>
               <p>Email:  <%= @profil.email %></p>
             </div>
           </div>
           <div class="col-6 d-flex flex-column align-items-center justify-content-center text-center">
             <div>
               <h1>123</h1>
-              <h3>évaluations</h3>
+              <h3>Evaluations</h3>
             </div>
             <hr>
             <div>
               <h1>8,9</h1>
-              <h3>note moyenne</h3>
+              <h3>Note moyenne</h3>
             </div>
             <hr>
             <div>
               <h1>11 ans</h1>
-              <h3>expérence</h3>
+              <h3>Expérience</h3>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="div2 rounded-4 shadow">
-      <h1 class="text-center">Skills</h1>
+      <h1 class="text-center">Compétence</h1>
     </div>
     <div class="div3">
       <h1>Toutes les missions (123)</h1>
@@ -54,20 +54,20 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <p>Price: <%= offer.price %>$</p>
+                  <p>Taux horaire: <%= offer.price %>$</p>
                   <p>Description: <%= offer.description %></p>
-                  <p>Address: <%= offer.address %></p>
+                  <p>Adresse: <%= offer.address %></p>
                 </div>
                 <div class="card-footer">
-                  <%= link_to 'Edit', edit_offer_path(offer), class: 'btn btn-warning' %>
-                  <%= link_to 'Delete', offer_path(offer),class: 'btn btn-warning', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+                  <%= link_to 'Editer', edit_offer_path(offer), class: 'btn btn-warning' %>
+                  <%= link_to 'Suprimer', offer_path(offer),class: 'btn btn-warning', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
                 </div>
               </div>
             <% end %>
           </div>
           <div class="d-flex flex-column">
-            <%= link_to "Bookings Received", bookings_received_profil_path(@profil), class: "btn btn-primary m-2" %>
-            <%= link_to 'Create a new offer', new_offer_path(@offer), class: 'btn btn-success m-2' %>
+            <%= link_to "Réservations reçues", bookings_received_profil_path(@profil), class: "btn btn-primary m-2" %>
+            <%= link_to 'Créer une nouvelle annonce', new_offer_path(@offer), class: 'btn btn-success m-2' %>
           </div>
         </div>
       </div>

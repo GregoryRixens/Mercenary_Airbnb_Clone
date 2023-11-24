@@ -3,8 +3,15 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
-    if params[:query].present?
-      @offers = @offers.search_by_title_and_description(params[:query])
+    if params[:search].present? && params[:search][:search_query].present?
+      @offers = Offer.search_by_title_and_description(params[:search][:search_query])
+      if params[:search][:rank].present?
+        @offers = search_by_rank(@offers, params)
+      else
+        return @offers
+      end
+    else
+      @offers = Offer.all
     end
   end
 
@@ -58,5 +65,12 @@ class OffersController < ApplicationController
 
   def offer_params
     params.require(:offer).permit(:title, :price, :description, :job, :rank, :address, :photo)
+  end
+
+  def search_by_rank(offers_temp, params)
+    filtered_offer = offers_temp.select do |offer|
+      offer if offer.rank == params[:search][:rank]
+    end
+    return filtered_offer
   end
 end
