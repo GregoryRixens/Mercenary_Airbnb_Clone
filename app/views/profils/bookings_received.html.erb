@@ -6,7 +6,7 @@
     <div class="container rounded-4 shadow p-3">
       <ul class="nav nav-tabs mb-3">
         <li class="nav-item">
-          <%= link_to "Attente",  bookings_received_profil_path(@profil), class: "nav-link text-white active" %>
+          <%= link_to "Attente",  bookings_received_profil_path(@profil), class: "nav-link text-dark active" %>
         </li>
         <li class="nav-item">
           <%= link_to "Accepted",  bookings_received_accepted_profil_path(@profil), class: "nav-link text-white" %>
@@ -15,26 +15,27 @@
           <%= link_to "Declined",  bookings_received_declined_profil_path(@profil), class: "nav-link text-white" %>
         </li>
       </ul>
-      <% @bookings_received.each do |reservation| %>
-        <div class="card mb-3 rounded-4 text-center" style="max-width: 18rem;">
-          <div class="card-header">Booking from: <%= reservation.user.user_name %></div>
-          <div class="card-body">
-            <h5 class="card-title"><%= reservation.description %></h5>
-            <div class="d-flex">
-              <p class="card-text">Start Date: <%= reservation.start_date %></p>
-              <p class="card-text">End Date: <%= reservation.end_date %></p>
+      <div class="d-flex">
+        <% @bookings_received.each do |reservation| %>
+          <div class="card rounded-4 text-center m-3 book" style="max-width: 18rem;">
+            <div class="card-header">Booking from: <%= reservation.user.user_name %></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= reservation.description %></h5>
+              <div class="d-flex">
+                <p class="card-text">Start Date: <%= reservation.start_date %></p>
+                <p class="card-text">End Date: <%= reservation.end_date %></p>
+              </div>
+              <p class="card-text">Your offer: <%= reservation.offer.title %></p>
+              <hr>
+              <div class="d-flex justify-content-around">
+                <%= link_to 'Accept',  accepted_bookings_path(reservation),class: 'btn btn-success', data: { turbo_method: :put } %>
+                <%= link_to 'Refuser', declined_bookings_path(reservation),class: 'btn btn-danger', data: { turbo_method: :put }%>
+              </div>
             </div>
-            <p class="card-text">Your offer: <%= reservation.offer.title %></p>
-            <hr>
-            <div class="d-flex justify-content-around">
-              <%= link_to 'Accept',  accepted_bookings_path(reservation),class: 'btn btn-success', data: { turbo_method: :put } %>
-              <%= link_to 'Refuser', declined_bookings_path(reservation),class: 'btn btn-danger', data: { turbo_method: :put }%>
-            </div>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
     </div>
-    <br>
-    <%= link_to "<i class='fas fa-arrow-left-long'></i> Back to Profile".html_safe, profil_path(@profil), class: "btn btn-primary" %>
   </div>
 </div>
