@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :profils, only: [:show, :edit, :update]
   resources :profils do
     get 'bookings_received', on: :member
+    get 'bookings_received_accepted', on: :member
+    get 'bookings_received_declined', on: :member
     member do
       get 'my_offers', to: 'profils#my_offers'
       get 'my_bookings', to: 'profils#my_bookings'
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   put 'accepted_bookings/:id', to: 'reservations#accepted_bookings', as: 'accepted_bookings'
+  put 'declined_bookings/:id', to: 'reservations#declined_bookings', as: 'declined_bookings'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
