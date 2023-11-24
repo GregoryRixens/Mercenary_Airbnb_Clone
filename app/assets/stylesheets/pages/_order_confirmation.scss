@@ -1,0 +1,53 @@
+.container-order {
+  width: 1000px;
+  height: 500px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 130px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center; /* Center-align the text within the container */
+}
+
+/* Ajoutez cette règle pour ajouter un pseudo-élément ::before à la carte */
+.container-order::before {
+  content: "";
+  background-image: url('icons/adventure.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Réglez l'opacité de l'image */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Placez l'image derrière le contenu de la carte */
+}
+
+.reservation-details {
+  margin-top: 80px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  position: relative;
+}
+
+.reservation-details h1,
+.reservation-details h2 {
+  color: #000;
+}
+
+.reservation-details p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #666;
+  margin: 10px 0;
+}
+
+.logo-image {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
