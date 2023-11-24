@@ -37,7 +37,14 @@ class ReservationsController < ApplicationController
 
   def accepted_bookings
     @reservation = Reservation.find(params[:id])
-    @reservation.status = true
+    @reservation.status = "accepted"
+    @reservation.save
+    redirect_to request.referer
+  end
+
+  def declined_bookings
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = "declined"
     @reservation.save
     redirect_to request.referer
   end

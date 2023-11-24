@@ -1,0 +1,29 @@
+<%= render "nav" %>
+
+<div class="container mt-4">
+  <h1 class="mb-4">My Bookings</h1>
+
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h2>Offer <%= booking.offer.title %></h2>
+          </div>
+
+          <div class="card-body">
+            <% if booking.offer.photo.attached? == true  %>
+              <%= cl_image_tag booking.offer.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
+            <% else %>
+              <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill, class: "card-img-top") %>
+            <% end %>
+
+            <p><strong>Booking ID:</strong> <%= booking.id %></p>
+            <p><strong>Booking Description:</strong> <%= booking.description %></p>
+            <p><strong>Booking status</strong> <%= booking.status %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

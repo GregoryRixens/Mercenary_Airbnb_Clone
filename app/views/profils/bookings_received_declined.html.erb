@@ -1,0 +1,38 @@
+<div class="container m-5 rounded-4 p-5">
+    <div class="d-flex justify-content-between">
+      <h1><%= @profil.user_name %> bookings :</h1>
+    </div>
+    <div class="container rounded-4 shadow p-3">
+      <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+          <%= link_to "Attente",  bookings_received_profil_path(@profil), class: "nav-link text-black" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Accepted",  bookings_received_accepted_profil_path(@profil), class: "nav-link text-black" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Declined",  bookings_received_declined_profil_path(@profil), class: "nav-link text-black active" %>
+        </li>
+      </ul>
+      <div class="d-flex flex-wrap m-2">
+        <% @bookings_received.each do |reservation| %>
+          <div class="card border-danger mb-3 me-3 rounded-4 text-center" style="max-width: 18rem;">
+            <%= link_to '<i class="fas fa-xmark"></i>'.html_safe, reservation_path(reservation), class: "delete text-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+            <div class="card-header rounded-top-4">Booking from: <%= reservation.user.user_name %></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= reservation.description %></h5>
+              <div class="d-flex">
+                <p class="card-text">Start Date: <%= reservation.start_date %></p>
+                <p class="card-text">End Date: <%= reservation.end_date %></p>
+              </div>
+              <p class="card-text">Your offer: <%= reservation.offer.title %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <br>
+
+    <%= link_to "<i class='fas fa-arrow-left-long'></i> Back to Profile".html_safe, profil_path(@profil), class: "btn btn-primary" %>
+  </div>
+</div>

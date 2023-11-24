@@ -1,24 +1,36 @@
 <div class="container mt-5 p-5">
+  <div class="d-flex align-items-baseline">
   <h1><%= @offer.title %></h1>
-
-  <p>Created by: <%= @offer.user.user_name %></p>
-  <% if @offer.photo.attached? == true  %>
-  <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
-  <% else %>
-  <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
-  <% end %>
-  <p>Taux horaire: <%= @offer.price.to_s %></p>
-  <p>Classe: <%= @offer.job %></p>
-  <p>Note: <%= @offer.rank %></p>
-  <p>Description: <%= @offer.description %></p>
-  <p>Adresse: <%= @offer.address %></p>
-
-  <% if @offer.user == current_user %>
-    <%= link_to 'Éditer', edit_offer_path(@offer) %>
-    <%= link_to 'Supprimer', offer_path(@offer), data: { turbo_method: :delete, turbo_confirm: "Voulez vous vraiment supprimer cette liste ?" } %>
-  <% else %>
-    <%= link_to "Réserver maintenant", new_offer_reservation_path(@offer), class: "btn btn-primary" %>
-  <% end %>
-
-  <%= link_to "Menu principal", root_path, class: "btn btn-primary" %>
+  <p>- Created by: <%= @offer.user.user_name %></p>
+  </div>
+  <div class="shadow rounded-4 row">
+    <div class="col-4 d-flex justify-content-end">
+      <% if @offer.photo.attached? == true  %>
+      <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill, class:"rounded-start-4" %>
+      <% else %>
+      <%= cl_image_tag("download_grlwat", width: 400, height: 300, crop: :fill) %>
+      <% end %>
+    </div>
+    <div class="col-8 offer-card">
+      <div class="d-flex">
+        <h4 class="class rounded-pill m-3"><%= @offer.job %></h4>
+        <h4 class="class-rank m-3"><%= @offer.rank %></h4>
+      </div>
+      <div class="m-3">
+        <p class="text-center"><strong><%= @offer.address %></strong></p>
+      </div>
+      <div class="prix rounded-pill">
+        <h3><%= @offer.price.to_s %> $</h3>
+      </div>
+      <div class="p-3 text">
+        <p class="text-center"><%= @offer.description %></p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="text-center d-flex justify-content-between">
+    <%= link_to "<i class='fas fa-arrow-left-long fa-5x'></i> <i class='fas fa-house-user fa-5x'></i>".html_safe, offers_path, class: "btn" %>
+    <%= link_to image_tag('sword-cross.256x232.png', size: '70x70') + "<i class='fas fa-arrow-right-long fa-5x'></i>".html_safe, new_offer_reservation_path(@offer), class: "btn d-flex align-items-center" %>
+  </div>
 </div>
