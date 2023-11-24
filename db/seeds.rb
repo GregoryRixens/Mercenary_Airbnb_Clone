@@ -18,17 +18,17 @@ user = User.create(
 user.photo.attach(io: URI.open("#{array_url[0]}"), filename: "file#{user.rank}")
 user.save!
 
-# offer = Offer.create(
-#   title: "Paladin des Cimes à louer",
-#   price: 150,
-#   address: "Forteresse de la Haute Crête",
-#   description: "Mon nom est Thrain Rocfer, paladin des cimes et gardien des montagnes. Ma hache de Pierre-Éclat fend les rochers avec une force inébranlable, et mon honneur est aussi solide que la pierre des cimes. Je défends les montagnes contre toute menace, et ma loyauté envers mes compagnons est inébranlable. Mon repaire se trouve dans la Forteresse de la Haute Crête, où les sommets touchent le ciel. Engagez-moi si vous recherchez un protecteur dévoué des montagnes et un guerrier implacable.",
-#   user_id: User.find_by(user_name: user.user_name).id,
-#   job: user.job,
-#   rank: user.rank
-# )
-# offer.photo.attach(io: URI.open("#{array_url[0]}"), filename: "file#{user.user_name}")
-# offer.save!
+offer = Offer.create(
+  title: "Paladin des Cimes à louer",
+  price: 150,
+  address: "Forteresse de la Haute Crête",
+  description: "Mon nom est Thrain Rocfer, paladin des cimes et gardien des montagnes. Ma hache de Pierre-Éclat fend les rochers avec une force inébranlable, et mon honneur est aussi solide que la pierre des cimes. Je défends les montagnes contre toute menace, et ma loyauté envers mes compagnons est inébranlable. Mon repaire se trouve dans la Forteresse de la Haute Crête, où les sommets touchent le ciel. Engagez-moi si vous recherchez un protecteur dévoué des montagnes et un guerrier implacable.",
+  user_id: User.find_by(user_name: user.user_name).id,
+  job: user.job,
+  rank: user.rank
+)
+offer.photo.attach(io: URI.open("#{array_url[0]}"), filename: "file#{user.user_name}")
+offer.save!
 
 user = User.create(
   user_name: "Pyrosphinx",
@@ -306,17 +306,17 @@ user = User.create(
 user.photo.attach(io: URI.open("#{array_url[12]}"), filename: "file#{user.rank}")
 user.save!
 
-offer = Offer.create(
-  title: "Loup solitaire chaud pour de la baston",
-  price: 80,
-  address: "Refuge de l'Aigle Noir, Vallée des Brumes",
-  description: "Je suis Loup Solitaire, le mercenaire légendaire et maître du Chemin de l'Aube. Mes techniques d'arts martiaux sont inégalées, et ma lame est celle de la justice. Seul dans la bataille, je suis le guerrier solitaire qui marche entre les ombres et la lumière. Mon refuge se trouve dans la Vallée des Brumes, où seuls ceux qui cherchent la véritable voie peuvent me trouver. Engagez-moi si vous recherchez un compagnon silencieux, un défenseur de la justice, et un maître du combat rapproché.",
-  user_id: User.find_by(user_name: user.user_name).id,
-  job: user.job,
-  rank: user.rank
-)
-offer.photo.attach(io: URI.open("#{array_url[12]}"), filename: "file#{user.user_name}")
-offer.save!
+# offer = Offer.create(
+#   title: "Loup solitaire chaud pour de la baston",
+#   price: 80,
+#   address: "Refuge de l'Aigle Noir, Vallée des Brumes",
+#   description: "Je suis Loup Solitaire, le mercenaire légendaire et maître du Chemin de l'Aube. Mes techniques d'arts martiaux sont inégalées, et ma lame est celle de la justice. Seul dans la bataille, je suis le guerrier solitaire qui marche entre les ombres et la lumière. Mon refuge se trouve dans la Vallée des Brumes, où seuls ceux qui cherchent la véritable voie peuvent me trouver. Engagez-moi si vous recherchez un compagnon silencieux, un défenseur de la justice, et un maître du combat rapproché.",
+#   user_id: User.find_by(user_name: user.user_name).id,
+#   job: user.job,
+#   rank: user.rank
+# )
+# offer.photo.attach(io: URI.open("#{array_url[12]}"), filename: "file#{user.user_name}")
+# offer.save!
 
 # reservation = Reservation.create(
 #   start_date: Faker::Date.between(from: 2.days.from_now, to: 3.days.from_now),
