@@ -1,18 +1,18 @@
 <%= render "nav" %>
-<div class="container m-5 rounded-4 p-5">
+<div class="container m-5 rounded-4 p-5 text-white">
     <div class="d-flex justify-content-between">
       <h1><%= @profil.user_name %> bookings :</h1>
     </div>
     <div class="container rounded-4 shadow p-3">
       <ul class="nav nav-tabs mb-3">
         <li class="nav-item">
-          <%= link_to "Attente",  bookings_received_profil_path(@profil), class: "nav-link text-black active" %>
+          <%= link_to "Attente",  bookings_received_profil_path(@profil), class: "nav-link text-white active" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Accepted",  bookings_received_accepted_profil_path(@profil), class: "nav-link text-black" %>
+          <%= link_to "Accepted",  bookings_received_accepted_profil_path(@profil), class: "nav-link text-white" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Declined",  bookings_received_declined_profil_path(@profil), class: "nav-link text-black" %>
+          <%= link_to "Declined",  bookings_received_declined_profil_path(@profil), class: "nav-link text-white" %>
         </li>
       </ul>
       <% @bookings_received.each do |reservation| %>

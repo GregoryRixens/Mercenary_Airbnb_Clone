@@ -1,5 +1,5 @@
 <div class="container mt-5 p-5">
-  <div class="d-flex align-items-baseline">
+  <div class="d-flex align-items-baseline text-white">
   <h1><strong><%= @offer.title %></strong></h1>
   <p class="ms-2">- Created by: <%= @offer.user.user_name %></p>
   </div>
@@ -30,7 +30,7 @@
   <br>
   <br>
   <div class="text-center d-flex justify-content-between">
-    <%= link_to "<i class='fas fa-arrow-left-long fa-3x'></i> <i class='fas fa-house-user fa-3x'></i>".html_safe, offers_path, class: "btn" %>
-    <%= link_to image_tag('sword-cross.256x232.png', size: '40x40') + "<i class='fas fa-arrow-right-long fa-3x'></i>".html_safe, new_offer_reservation_path(@offer), class: "btn d-flex align-items-center" %>
+    <%= link_to "<i class='fas fa-arrow-left-long fa-3x'></i> <i class='fas fa-house-user fa-3x'></i>".html_safe, offers_path, class: "btn text-white" %>
+    <%= link_to image_tag('sword-cross.256x232.png', size: '40x40') + "<i class='fas fa-arrow-right-long fa-3x'></i>".html_safe, new_offer_reservation_path(@offer), class: "btn d-flex align-items-center text-white" %>
   </div>
 </div>
