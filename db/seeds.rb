@@ -259,7 +259,7 @@ user.photo.attach(io: URI.open("#{array_url[10]}"), filename: "file#{user.rank}"
 user.save!
 
 offer = Offer.create(
-  title: "Force brute et Désolation",
+  title: "Force brute, désolation et bottage de cul en règle",
   price: 25,
   address: "Grotte des Hurlements Sauvages",
   description: "Je suis Brise-Crâne, le troll colossal maître de la force brute et de la désolation. Ma massue écrasante fend l'air avec une puissance dévastatrice, et mes rugissements font trembler la terre. Mon repaire se trouve dans la Grotte des Hurlements Sauvages, où la brutalité règne en maître. Engagez-moi si vous avez besoin d'une montagne de force pour écraser vos ennemis et semer le chaos sur le champ de bataille.",
